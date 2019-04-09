@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="weizhi">
+        <view><text  catchtap="toIndex" >首页</text> > <text catchtap="toNlist" data-realpath="{{thistypeinfos.real_path}}">{{thistypeinfos.typename}}</text> 文档列表：</view>
+    </view>
+    <!--文档列表-->
+    <view class="viewst_middle">
+        <view class="text_centre">
+            <view>
+                <view class="li-target" s-for="article in articles">
+                    <view class="a-target" catchtap="toArticle" data-index="{{article.id}}">
+                        <view class="img_show"><image src="{{article.litpic}}" class="img_viewst"></image></view>
+                        <view class="cont">
+                            <view class="tit_1">{{article.title}}</view>
+                            <view class="info">{{article.description}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--文档列表end-->
+</view>

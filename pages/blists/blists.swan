@@ -1,0 +1,46 @@
+<view class="container">
+    <view class="weizhi">
+        <view><text  catchtap="toIndex">首页</text> > <text catchtap="toBrandList" data-realpath="{{thistypeinfos.real_path}}">{{thistypeinfos.typename}}</text>> 品牌列表：</view>
+    </view>
+<!--品牌列表-->
+    <view class="brand_list">
+        <view class="brand-detail-list-all" s-for="brand,index in brands">
+            <view class="search-list-container  ">
+                <view class="title flex flex-align-center">
+                  <text class="num-icon">
+                        <text class="top">{{index+1}}</text>
+                    </text>
+                    <view class="title-text">
+                        <text class="a-target"   catchtap="toBrandArticle" data-index="{{brand.id}}"><text>{{brand.brandname}}</text></text>
+                    </view>
+                    <view  catchtap="toBrandArticle" data-index="{{brand.id}}" class="brand-list-item-jump-tmall official" title="{{brand.brandname}}"><text class="active">品牌详情</text></view>
+                </view>
+                <view class="clear"></view>
+                <view class="brand-container"  catchtap="toBrandArticle" data-index="{{brand.id}}">
+                    <view class="list flex flex-align-center">
+                        <view class="dt flex flex-align-center">
+                                <view>
+                                    <image src="{{brand.litpic}}" alt="{{brand.brandname}}" class="autoWH"></image>
+                                </view>
+                        </view>
+                        <view class="big-data">
+                            <view class="data">
+                                <view class="info"><text>投资金额：{{brand.brandpay}}</text><text>品牌名称：{{brand.brandname}}</text></view>
+                            </view>
+                            <view class="data">
+                                <view class="info"><text>加盟人气：{{brand.click}}</text>  <text>所在地区：{{brand.brandorigin}}</text></view>
+                            </view>
+                            <view class="data">
+                                <view class="info"><text>门店总数：{{brand.brandnum}}</text>  <text>申请加盟：{{brand.brandattach}}</text></view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="spe-msg">
+                        {{brand.description}}
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

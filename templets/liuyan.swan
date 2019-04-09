@@ -1,0 +1,50 @@
+<template name="liuyan">
+<view id="item5" class="clearfix">
+    <view class="item5box">
+        <view class="formicon"></view>
+        <view class="title">在线留言</view>
+        <form bindsubmit="formSubmitHandle" report-submit>
+            <view class="inputbox">
+                <input type="text" name="username" id="guestname" value='{=username=}'  placeholder="您的真实姓名" />
+                <text>姓名：</text>
+            </view>
+            <view class="inputbox">
+                <input type="number" name="iphone" id="phonenum" value='{=iphone=}'  placeholder="电话是与您联系的重要方式" />
+                <text>手机：</text>
+            </view>
+            <view class="inputbox">
+                <input type="text" name="content" id="note" value='{=content=}'  placeholder="我对此项目很感兴趣，请联系我。" />
+                <text>留言：</text>
+            </view>
+            <button form-type="submit" class="submitmessagebtn" id="submit_sub">提交留言</button>
+        </form>
+        <view class="lysm">
+            本站为资讯展示网站，本网页信息来源互联网，本平台不保证信息的真实性，请用户自行与商家联系核对真实性。此次留言将面向网站内所有页面项目产生留言。
+        </view>
+    </view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" s-if="{{showModal}}"></view>
+<view class="modalDlg" s-if="{{showModal}}">
+    <view id="item52" class="clearfix">
+        <view class="item5box">
+            <view class="title">在线留言</view>
+            <form bindsubmit="formSubmitHandle2" report-submit>
+                <view class="inputbox">
+                    <input type="text" name="tusername"  value='{=tusername=}'  placeholder="您的真实姓名" />
+                    <text>姓名：</text>
+                </view>
+                <view class="inputbox">
+                    <input type="number" name="tiphone" value='{=tiphone=}'  placeholder="电话是与您联系的重要方式" />
+                    <text>手机：</text>
+                </view>
+                <view class="inputbox">
+                    <input type="text" name="tcontent" value='{=tcontent=}'  placeholder="我对此项目很感兴趣，请联系我。" />
+                    <text>留言：</text>
+                </view>
+                <button form-type="submit" class="submitmessagebtn" >提交留言</button>
+            </form>
+        </view>
+    </view>
+    <view  bindtap="closeMod" class="popup_close"></view>
+</view>
+</template>

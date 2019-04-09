@@ -1,0 +1,30 @@
+{
+    "debug": true,
+    "pages": [
+        "pages/index/index",
+        "pages/blists/blists",
+        "pages/nlists/nlists",
+        "pages/article/article",
+        "pages/brandarticle/brandarticle",
+        "pages/search/search",
+        "pages/paihangbang/paihangbang"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#dc0011",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "火爆餐饮网",
+        "navigationStyle": "default",
+        "backgroundTextStyle": "light"
+    },
+    "url-mapping":{
+        "pages/index/index": "/",
+        "pages/blists/blists": "/index.php/${real_path}/",
+        "pages/nlists/nlists": "/index.php/${real_path}/",
+        "pages/article/article": "/index.php/news/${index}/",
+        "pages/brandarticle/brandarticle": "/index.php/brand/${index}/",
+        "pages/paihangbang/paihangbang": [
+            "/index.php/paihangbang/",
+            "/index.php/paihangbang/${real_path}/"
+        ]
+    }
+}

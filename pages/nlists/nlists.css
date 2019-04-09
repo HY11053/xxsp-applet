@@ -1,0 +1,61 @@
+.weizhi {
+    background: url(../../images/m_header.jpg) no-repeat left 10px center #f1f1f1;
+    height: 90rpx;
+    line-height:90rpx;
+    font-size: 28rpx;
+    width: 100%;
+}
+.weizhi view {
+    display: block;
+    height: 76rpx;
+    padding: 0 20rpx 0 64rpx;
+}
+.list_middle {
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 30rpx;
+    margin-top: 20rpx;
+}
+.text_centre {
+    overflow: hidden;
+    margin-bottom: 30rpx;
+}
+.text_centre view.li-target {
+    border-bottom: 1px solid #EEE;
+    padding: 30rpx 30rpx 30rpx 30rpx;
+    overflow: hidden;
+    zoom: 1;
+}
+.text_centre .a-target {
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+}
+.text_centre .img_show {
+    float: left;
+    margin-right: 30rpx;
+    width: 200rpx;
+    height: 140rpx;
+    border: 2rpx solid #EEE;
+}
+.text_centre .img_show image {
+    width: 200rpx;
+    height: 140rpx;
+}
+.text_centre .cont {
+    margin-bottom: 10rpx;
+}
+.text_centre .cont .tit_1 {
+    font-size:28rpx;
+    padding-bottom: 4rpx;
+    font-weight: bold;
+    line-height: 28rpx;
+    color: #666666;
+}
+.text_centre .cont .info {
+    color: #999;
+    padding-bottom: 4rpx;
+    line-height: 30rpx;
+    margin: 0px;
+    font-size: 24rpx;
+}

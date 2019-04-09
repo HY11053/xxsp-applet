@@ -1,0 +1,212 @@
+<view class="search">
+    <form bindsubmit="formSubmitHandle" report-submit>
+        <view class="btn-area">
+            <view class="search_input">
+                <input bindconfirm="searchBtn" name="search"  value='{=keyword=}'  placeholder="请输入要搜索的项目" />
+            </view>
+            <view s-if="{{btn}}" bindtap='search' class="search_btn"> <button class="form-button" form-type="submit">提交</button></view>
+        </view>
+    </form>
+</view>
+<view class="lunbo">
+	<swiper indicator-dots="true" autoplay="true" interval="3000" duration="500">
+		<block s-for="imgdata in imgdatas">
+			<swiper-item>
+				<image src="{{imgdata.imgurl}}" catchtap="toBrandArticle" data-index="{{imgdata.id}}" class="slide-image" width="355" height="250" />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+<view class="nav-side">
+    <view class="smalllist clearfix">
+        <view class="small-box" catchtap="toBrandList" data-realpath="blist/canyin_28">
+            <image src="https://m.51xxsp.com/m51xxsp/images/canyin.png"></image><view>餐饮加盟</view>
+        </view>
+        <view class="small-box" catchtap="toBrandList" data-realpath="blist/yinpin_30">
+            <image src="https://m.51xxsp.com/m51xxsp/images/yinpin.png"></image><view>饮品加盟</view>
+        </view>
+        <view class="small-box"  catchtap="toBrandList" data-realpath="blist/lingshi_1">
+            <image src="https://m.51xxsp.com/m51xxsp/images/lingshi.png"></image><view>零食加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/zhaji_29">
+            <image src="https://m.51xxsp.com/m51xxsp/images/zhaji.png"></image><view>炸鸡加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="huoguo">
+            <image src="https://m.51xxsp.com/m51xxsp/images/huoguo.png"></image><view>火锅加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/suancaiyu">
+            <image src="https://m.51xxsp.com/m51xxsp/images/suancaiyu.png"></image><view>酸菜鱼加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/mianshi">
+            <image src="https://m.51xxsp.com/m51xxsp/images/mianshi.png"></image><view>面食加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="shengjian">
+            <image src="https://m.51xxsp.com/m51xxsp/images/shengjian.png"></image><view>生煎加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="ganxi">
+            <image src="https://m.51xxsp.com/m51xxsp/images/ganxi.png"></image><view>干洗加盟</view>
+        </view>
+        <view class="small-box rightbox" catchtap="toPaihangbang" >
+            <image src="https://m.51xxsp.com/m51xxsp/images/paihangbang.png"></image><view>品牌排行榜</view>
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view class="recommend clearfix">
+<image src="https://m.51xxsp.com/m51xxsp/images/icon-kmtt.png"></image>
+    <swiper vertical="true" autoplay="true" interval="3000" duration="500" id="moocBox">
+        <block>
+            <swiper-item s-for="abrand in abrands"><view  catchtap="toBrandArticle" data-index="{{abrand.id}}">{{abrand.title}}</view></swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="brand-conatiner">
+<view class="related-tit tabs-tit">
+    <text class="jpxm"></text>
+    <view class="btn-one-more fr">
+        <text class="ic-one-more" catchtap="chengeBrands"  data-type="click"></text>换一批
+    </view>
+</view>
+<view class="tabs-ctn" data-id="m_n_a03" data-type="cmsadpos">
+    <view class="content cy-item ">
+        <view s-for="cbrand in cbrands" class="li">
+            <view catchtap="toBrandArticle" data-index="{{cbrand.id}}">
+                <image src="{{cbrand.litpic}}"></image>
+                <text class="online-title">{{cbrand.brandname}}</text>
+                <text class="online-name">{{cbrand.brandgroup}}</text>
+                <view class="online-money"><text id="rmb">￥</text>{{cbrand.brandpay}}</view>
+                <text class="timespan">{{ cbrand.created_at}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+<view class="brand-conatiner">
+    <view class="related-tit tabs-tit">
+        <text class="xptj"></text>
+        <view class="btn-one-more fr">
+            <text class="ic-one-more" catchtap="chengeBrands"  data-type="id"></text>换一批
+        </view>
+    </view>
+    <view class="tabs-ctn" data-id="m_n_a03" data-type="cmsadpos">
+        <view class="content cy-item ">
+            <view s-for="newbrand in newbrands" class="li">
+                <view  catchtap="toBrandArticle" data-index="{{newbrand.id}}">
+                    <image src="{{newbrand.litpic}}"></image>
+                    <text class="online-title">{{newbrand.brandname}}</text>
+                    <text class="online-name">{{newbrand.brandgroup}}</text>
+                    <view class="online-money"><text id="rmb">￥</text>{{newbrand.brandpay}}</view>
+                    <text class="timespan">{{newbrand.created_at}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="news clearfix">
+    <view class="favor-header-bar clearfix">
+        <view class="tabs swiper-tab">
+            <view class="tab-inlne {{currentTab==0?'on':''}}"  data-current="0" bindtap="clickTab">品牌新闻</view>
+            <view class="tab-inlne {{currentTab==1?'on':''}}"  data-current="1" bindtap="clickTab">加盟指南</view>
+            <view class="tab-inlne {{currentTab==2?'on':''}}"  data-current="2" bindtap="clickTab">投资分析</view>
+            <view class="tab-inlne {{currentTab==3?'on':''}}"  data-current="3" bindtap="clickTab">经营管理</view>
+        </view>
+    </view>
+    <view>
+        <swiper class="auto"  current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+            <view class="swiper-item">
+                <view class="news-content ">
+                    <view class="newslist1" s-for="newarticle in newarticles">
+                        <view class="dd-two">
+                            <view class="newslist-tit p-two"><text  catchtap="toArticle" data-index="{{newarticle.id}}">{{newarticle.title}}</text></view>
+                            <view class="newslist-text p1-two"></view>
+                        </view>
+                        <view class="dt-two dt-two1 clearfix">
+                            <image s-for="imagepic in newarticle.imagepics" src="{{imagepic}}" class="fl mgr150 "></image>
+                        </view>
+                        <view class="publish ">
+                            <text class="fl publish-text">来源：{{basename}}</text>
+                            <text class=" publish-text fl">{{newarticle.created_at}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="swiper-item">
+                <view class="news-content ">
+                    <view class="newslist1" s-for="zhinanarticle in zhinanarticles">
+                        <view class="dd-two">
+                            <view class="newslist-tit p-two"><text  catchtap="toArticle" data-index="{{zhinanarticle.id}}">{{zhinanarticle.title}}</text></view>
+                            <view class="newslist-text p1-two"></view>
+                        </view>
+                        <view class="dt-two dt-two1 clearfix">
+                            <image s-for="imagepic in zhinanarticle.imagepics" src="{{imagepic}}" class="fl mgr150 "></image>
+                        </view>
+                        <view class="publish ">
+                            <text class="fl publish-text">来源：{{basename}}</text>
+                            <text class=" publish-text fl">{{zhinanarticle.created_at}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="swiper-item">
+                <view class="news-content ">
+                    <view class="newslist1" s-for="touziarticle in touziarticles">
+                        <view class="dd-two">
+                            <view class="newslist-tit p-two"><text catchtap="toArticle" data-index="{{touziarticle.id}}">{{touziarticle.title}}</text></view>
+                            <view class="newslist-text p1-two"></view>
+                        </view>
+                        <view class="dt-two dt-two1 clearfix">
+                            <image s-for="imagepic in touziarticle.imagepics" src="{{imagepic}}" class="fl mgr150 "></image>
+                        </view>
+                        <view class="publish ">
+                            <text class="fl publish-text">来源：{{basename}}</text>
+                            <text class=" publish-text fl">{{touziarticle.created_at}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="swiper-item">
+                <view class="news-content ">
+                    <view class="newslist1" s-for="jingyingarticle in jingyingarticles">
+                        <view class="dd-two">
+                            <view class="newslist-tit p-two"><text catchtap="toArticle" data-index="{{jingyingarticle.id}}">{{jingyingarticle.title}}</text></view>
+                            <view class="newslist-text p1-two"></view>
+                        </view>
+                        <view class="dt-two dt-two1 clearfix">
+                            <image s-for="imagepic in jingyingarticle.imagepics" src="{{imagepic}}" class="fl mgr150 "></image>
+                        </view>
+                        <view class="publish ">
+                            <text class="fl publish-text">来源：{{basename}}</text>
+                            <text class=" publish-text fl">{{jingyingarticle.created_at}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </swiper>
+        <view class="clear"></view>
+    </view>
+        <view class="lxmore">
+        <text  catchtap="toNlist" data-realpath="bnlist">查看更多</text>
+    </view>
+</view>
+
+<view class="clearfix">
+    <view class="related-tit2 bg-fff mgt20 tabs-tit">
+        <view>隐私保护</view>
+        <view class="btn-one-more fr">
+        </view>
+    </view>
+    <view class="tabs-ctn">
+        <view class="content1 cy-item ">
+            <view>
+                <view class="online-name1">1. 我方平台为信息发布平台，您的留言将在我方平台发布或提供给相应商家</view>
+                <view class="online-name1">2. 如不需要发布信息，请勿在本平台留言</view>
+                <view class="online-name1">3.
+                    公司对与任何包含、经由、或链接、下载或从任何与本网站有关服务所获得的资讯、内容或广告，不声明或保证其内容的正确性、真实性或可靠性；并且，对于您透过本网广告、资讯或要约而展示、购买或取得的任何产品、资讯或资料，本网站亦不负品质保证的责任。您与此接受并承认信赖任何信息所产生之风险应自行承担，本网对任何使用或提供本网站信息的商业活动及其风险不承担任何责任。</view>
+                <view class="online-name1">4. 本网站若因线路及非本公司控制范围外的硬件故障或其它不可抗力，以及黑客政击、计算机病毒侵入或发而造成的个人资料泄露、丢失、被盗用或被篡改等，本网站亦不负任何责任。</view>
+                <view class="online-name1">5.
+                    当本网站以链接形式推荐其他网站内容时，本网站并不对这些网站或资源的真实性、可用性、合法性负责，且不保证从这些网站获取的任何内容、产品、服务或其他材料的真实性、合法性，对于任何因使用或信赖从此类网站上获取的内容、产品、资源、服务或其他材料而造成的任何直接或间接的损失均由您自行承担，本网站均不承担任何责任。</view>
+            </view>
+        </view>
+    </view>
+</view>

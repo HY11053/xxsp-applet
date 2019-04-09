@@ -1,0 +1,130 @@
+<import src="../../wxParser/index.swan" />
+<import src="../../templets/liuyan.swan" />
+<view class="container">
+    <view class="weizhi">
+        <view><text  catchtap="toIndex">首页</text> > <text catchtap="toBrandList" data-realpath="{{thistypeinfos.real_path}}">{{thistypeinfos.typename}}</text>> 品牌详情：</view>
+    </view>
+    <!--文档详情-->
+    <view class="list_middle">
+        <view class="brandinfo">
+            <view id="item1">
+                <view class="item1box">
+                    <view class="item1boxleft fl">
+                        <view class="title"><text>{{thisarticleinfos.brandname}}</text></view>
+                        <view class="text">{{thisarticleinfos.brandgroup}}</view>
+                        <view class="time"><text>{{thisarticleinfos.created_at}}</text></view>
+                    </view>
+                    <view class="item1boxmiddle fl">
+                        <view class="top" style="font-weight: bold;">{{thisarticleinfos.brandpay}}</view>
+                        <view><view class="bottom"></view></view>
+                    </view>
+                    <view class="item1boxright fr clearfix">
+                        <view><image class="js_popup"  catchtap="telSubmit" src="https://m.51xxsp.com/m51xxsp/images/liuyan.png" alt="在线留言"></image></view>
+                        <view class="text"  catchtap="telSubmit">在线留言</view>
+                    </view>
+                </view>
+            </view>
+            <view class="lunbo">
+                <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500">
+                    <block s-for="brandimage in thisarticleinfos.imagepics">
+                        <swiper-item>
+                            <image src="{{brandimage}}" class="slide-image" width="355" height="250" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            <view id="item3">
+                <view class="item3box">
+                    <view  class="title clearfix">
+                        <text class="tl">品牌地址：{{thisarticleinfos.brandorigin}}</text>
+                        <text class="tc">门店数目：{{thisarticleinfos.brandnum}}</text>
+                        <text class="tr">{{thisarticleinfos.brandclick}}人关注</text>
+                    </view>
+                    <view class="top clearfix">
+                        <view class="topleft fl">
+                            <view></view>
+                            <text>
+                                注：{{thisarticleinfos.brandname}}投资金额可能包含了加盟费、保证金、品牌使用费等其他相关费用，因此投资总额根据实际情况计算，相关费用解释请参考页面
+                            </text>
+                        </view>
+                        <view class="topright fr">
+                            <view class="item3boxbtn btn1 js_popup"  bindtap="telSubmit">
+                                <text  catchtap="telSubmit">立即咨询</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="bottom clearfix">
+                        <view class="bottomleft fl">
+                        </view>
+                        <view class="bottomright fr">
+                            <view catchtap="makePhoneCall" data-phoneNumber="400-8896-216">
+                                <view class="item3boxbtn btn2">
+                                    拨打电话
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="a_content">
+            <view>
+                <view class="wxParser">
+                    <template is="wxParser" data="{{{wxParserData:richText.nodes}}}" />
+                </view>
+            </view>
+        </view>
+        <view class="liuyan">
+            <template is="liuyan"  data="{{{showModal:showModal}}}" />
+        </view>
+        <view id="item7">
+            <view class="item7box clearfix">
+                <view class="article-icon"></view>
+                <view class="title">项目资讯</view>
+                <view class="item7content">
+                    <view class="item7list" s-for="brandnew in brandnews">
+                        <view  catchtap="toArticle" data-index="{{brandnew.id}}">
+                            <view class="left fl">
+                                <view class="lefttitle">{{brandnew.title}}</view>
+                                <view class="text">
+                                    <view class="message">来源：火爆餐饮网</view>
+                                    <view class="time">{{brandnew.created_at}}</view>
+                                </view>
+                            </view>
+                            <view class="right fr">
+                                <image src="{{brandnew.litpic}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view id="item8">
+            <view class="item8box clearfix">
+                <view class="brand-icon"></view>
+                <view class="title">猜你喜欢</view>
+                <view class="item8content">
+                    <view s-for="brandarticle in brandarticles" class="item8list">
+                        <view  catchtap="toBrandArticle" data-index="{{brandarticle.id}}">
+                            <image src="{{brandarticle.litpic}}" alt="{{brandarticle.brandname}}"></image>
+                            <view class="item8listcontent">
+                                <view class="listtitle">{{brandarticle.brandname}}</view>
+                                <view class="listtext">
+                                    <text>{{brandarticle.brandgroup}}</text>
+                                </view>
+                                <view class="textleft fl">{{brandarticle.brandpay}}
+                                </view>
+                                <view class="textright fr">
+                                    {{brandarticle.created_at}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--文档详情end-->
+</view>
