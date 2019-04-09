@@ -3,10 +3,10 @@ var app = getApp();
 Page({
   data: {
     imgdatas: [
-        {id:228,imgurl:"https://m.51xxsp.com/51xxsp/images/133113481.jpg"},
-        {id:419,imgurl:"https://m.51xxsp.com/51xxsp/images/133113481232.jpg"},
-        {id:1228,imgurl:"https://m.51xxsp.com/51xxsp/images/1331134812.jpg"},
-        {id:7694,imgurl:"https://m.51xxsp.com/51xxsp/images/1331134813.jpg"},
+        {id:7,imgurl:"https://m.51xxsp.com/51xxsp/images/133113481.jpg"},
+        {id:1062,imgurl:"https://m.51xxsp.com/51xxsp/images/133113481232.jpg"},
+        {id:1396,imgurl:"https://m.51xxsp.com/51xxsp/images/1331134812.jpg"},
+        {id:1484,imgurl:"https://m.51xxsp.com/51xxsp/images/1331134813.jpg"},
     ],
       currentTab:0,
       page:0,

@@ -19,32 +19,32 @@
 </view>
 <view class="nav-side">
     <view class="smalllist clearfix">
-        <view class="small-box" catchtap="toBrandList" data-realpath="blist/canyin_28">
+        <view class="small-box" catchtap="toBrandList" data-realpath="blist/canyin_8">
             <image src="https://m.51xxsp.com/m51xxsp/images/canyin.png"></image><view>餐饮加盟</view>
         </view>
-        <view class="small-box" catchtap="toBrandList" data-realpath="blist/yinpin_30">
+        <view class="small-box" catchtap="toBrandList" data-realpath="yinpin">
             <image src="https://m.51xxsp.com/m51xxsp/images/yinpin.png"></image><view>饮品加盟</view>
         </view>
         <view class="small-box"  catchtap="toBrandList" data-realpath="blist/lingshi_1">
             <image src="https://m.51xxsp.com/m51xxsp/images/lingshi.png"></image><view>零食加盟</view>
         </view>
-        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/zhaji_29">
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="zhaji">
             <image src="https://m.51xxsp.com/m51xxsp/images/zhaji.png"></image><view>炸鸡加盟</view>
         </view>
         <view class="small-box rightbox" catchtap="toBrandList" data-realpath="huoguo">
             <image src="https://m.51xxsp.com/m51xxsp/images/huoguo.png"></image><view>火锅加盟</view>
         </view>
-        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/suancaiyu">
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="suancaiyu">
             <image src="https://m.51xxsp.com/m51xxsp/images/suancaiyu.png"></image><view>酸菜鱼加盟</view>
         </view>
-        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/mianshi">
-            <image src="https://m.51xxsp.com/m51xxsp/images/mianshi.png"></image><view>面食加盟</view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="blist/sort_10">
+            <image src="https://m.51xxsp.com/m51xxsp/images/mianshi.png"></image><view>面馆加盟</view>
         </view>
         <view class="small-box rightbox" catchtap="toBrandList" data-realpath="shengjian">
             <image src="https://m.51xxsp.com/m51xxsp/images/shengjian.png"></image><view>生煎加盟</view>
         </view>
-        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="ganxi">
-            <image src="https://m.51xxsp.com/m51xxsp/images/ganxi.png"></image><view>干洗加盟</view>
+        <view class="small-box rightbox" catchtap="toBrandList" data-realpath="xiolongxia">
+            <image src="https://m.51xxsp.com/m51xxsp/images/ganxi.png"></image><view>小龙虾加盟</view>
         </view>
         <view class="small-box rightbox" catchtap="toPaihangbang" >
             <image src="https://m.51xxsp.com/m51xxsp/images/paihangbang.png"></image><view>品牌排行榜</view>
